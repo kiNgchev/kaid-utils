@@ -35,7 +35,7 @@ public actual class Property<T>(
             if (arr.size != 2)
                 throw IllegalStateException("Properties is invalid")
             val (key, value) = arr
-            properties[key] = value
+            properties[key] = value.trim()
         }
     }
 
