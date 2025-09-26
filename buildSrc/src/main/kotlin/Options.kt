@@ -10,9 +10,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 internal val kaidOptIns = listOf(
-    "kotlin.contracts.ExperimentalContracts",
-
-    "net.kingchev.kaid.internal.annotation.KaidInternal",
+    "kotlin.contracts.ExperimentalContracts"
 )
 
 internal fun ApiValidationExtension.bvcOptions() {

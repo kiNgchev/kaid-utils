@@ -4,3 +4,4 @@ plugins {
 rootProject.name = "kaid-utils"
 include("kaid-internal")
 include("kaid-resource")
+include("kaid-math")

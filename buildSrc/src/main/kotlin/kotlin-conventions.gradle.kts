@@ -1,9 +1,4 @@
-import org.gradle.kotlin.dsl.configureEach
 import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTargetWithTests
-import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
 
 plugins {
@@ -14,6 +9,10 @@ plugins {
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    commonTestImplementation(kotlin("test"))
 }
 
 kotlin {
@@ -29,7 +28,12 @@ kotlin {
         }
     }
     js {
-        nodejs()
+        nodejs() {
+            testTask {
+                environment("KEY_ONE", "VALUE_ONE")
+                environment("KEY_TWO", "1")
+            }
+        }
         useCommonJs()
     }
 
